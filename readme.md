@@ -1,7 +1,7 @@
 #Appointments WebApp
 
 ## Synopsis
-This is a simple WebApp that takes in inputs from the user for to record the date, time and description of an appointment.
+This is a simple WebApp that takes in inputs from the user  to record the date, time and description of an appointment.
 
 ## Technologies Used
 PERL</br>

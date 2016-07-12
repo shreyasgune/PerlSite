@@ -113,8 +113,8 @@ sudo apt-get install build-essential
 ```
 
 ##Create cgi-bin folder and grant it permissions
-`sudo mkdir /home/www/cgi-bin/`
-`sudo chmod 777 /home/www/cgi-bin/` 
+`sudo mkdir /home/www/cgi-bin/`</br>
+`sudo chmod 777 /home/www/cgi-bin/` </br>
 
 ##Put your html files in  
 `/var/www/html/` 
@@ -149,13 +149,13 @@ cpan DBI
 Also , remember to `sudo chmod 777 <your_script_file>` your `.cgi` files. 
 
 ## API Reference
-![JQUERY API](https://api.jquery.com/)
-![AJAX](http://api.jquery.com/jquery.ajax/)
-![SQLite3](https://www.sqlite.org/docs.html)
-![JSON Docs](http://www.json.org/)
-![Apache Docs](http://httpd.apache.org/docs/current/howto/cgi.html)
-![Perl Docs](http://perldoc.perl.org/)
-![SQLite3 for Perl](http://search.cpan.org/~msergeant/DBD-SQLite-0.31/lib/DBD/SQLite.pm)
+![JQUERY API](https://api.jquery.com/)</br>
+![AJAX](http://api.jquery.com/jquery.ajax/)</br>
+![SQLite3](https://www.sqlite.org/docs.html)</br>
+![JSON Docs](http://www.json.org/)</br>
+![Apache Docs](http://httpd.apache.org/docs/current/howto/cgi.html)</br>
+![Perl Docs](http://perldoc.perl.org/)</br>
+![SQLite3 for Perl](http://search.cpan.org/~msergeant/DBD-SQLite-0.31/lib/DBD/SQLite.pm)</br>
 
 ## Contributors
 If you want to contribute or add to it or make it better, more readable, go for it. Tweet me issues if you can  : [@shreyaslumos](https://www.twitter.com/shreyaslumos) 

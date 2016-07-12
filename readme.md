@@ -4,11 +4,14 @@
 This is a simple WebApp that takes in inputs from the user for to record the date, time and description of an appointment.
 
 ## Technologies Used
-PERL\n
-JSON\n
-SQL (can be any type of SQL)\n
-JQUERY\n
-HTML\n
+PERL</br>
+JSON</br>
+SQL (can be any type of SQL)</br>
+JQUERY</br>
+HTML</br>
+
+##Deployed Here
+[http://52.23.229.225/appoint.html](http://52.23.229.225/appoint.html)
 
 #Front End Look
 When appointments are absent

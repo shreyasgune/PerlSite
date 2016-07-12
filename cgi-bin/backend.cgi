@@ -8,7 +8,7 @@ use CGI::Carp qw(fatalsToBrowser);
 use strict; # Perl will check for potential mistakes, thereby helping you to avoid common Perl pitfalls
 use HTML::Parser;
 
-my $cgi = new CGI;
+my $cgi = new CGI; #This will parse the input (from POST, GET and DELETE methods) and store it into a perl5 object called $cgi.
 print $cgi->header; #pushes out the header for the browser to make sense of the script output
 print $cgi->start_html(-title=>'Appointed Output');
 

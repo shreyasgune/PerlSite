@@ -2,7 +2,7 @@
 #telling the OS (that understands the shebang) to find the first "perl" executable in the list of $PATH, and exec that program by appending the current file name after the shebang. 
 
 use warnings; 
-use CGI qw(:standard); 
+use CGI qw(:standard); #Use standard CGI Routines
 use DBI;
 use CGI::Carp qw(fatalsToBrowser);
 use strict; # Perl will check for potential mistakes, thereby helping you to avoid common Perl pitfalls

@@ -3,7 +3,7 @@
 use warnings;
 use CGI qw(:standard);
 use DBI;
-use CGI::Carp qw(fatalsToBrowser);
+use CGI::Carp qw(fatalsToBrowser); #redirects the errors from the errorlogs to the browser, so you know exactly where things went wrong.
 use strict;
 use JSON; #to be able to use the JSON parsing 
 binmode STDOUT, ":utf8"; #to define the proper encoding scheme

@@ -146,7 +146,7 @@ cpan DBI
 Also , remember to `sudo chmod 777 <your_script_file>` your `.cgi` files. 
 
 # A Short and Sweet : Perl Essentials
-# ------------------------------------------------------{PERL GUIDE BEGINS}-----------------------------------------------------
+### ------------------------------------------------------{PERL GUIDE BEGINS}-----------------------------------------------------
 So, I have had a bit of an experience with Perl. So here is my : get it done fast listing. 
 
 A Perl script is a text file with the extension `.pl`.
@@ -370,7 +370,7 @@ sub subroutine {
 A Perl script (.pl file) must always contain exactly zero package declarations.
 A Perl module (.pm file) must always contain exactly one package declaration, corresponding exactly to its name and location. E.g. module `Demo/StringUtils.pm` must begin with package `Demo::StringUtils`.
 
-# ------------------------------------------------------{PERL GUIDE ENDS}-----------------------------------------------------
+### ------------------------------------------------------{PERL GUIDE ENDS}-----------------------------------------------------
 
 ## API Reference
 ![JQUERY API](https://api.jquery.com/)</br>

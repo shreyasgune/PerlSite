@@ -146,7 +146,7 @@ cpan DBI
 Also , remember to `sudo chmod 777 <your_script_file>` your `.cgi` files. 
 
 # A Short and Sweet : Perl Essentials
-### ------------------------------------------------------{PERL GUIDE BEGINS}-----------------------------------------------------
+### ------------------------------------------------------{PERL GUIDE BEGINS}---------------
 So, I have had a bit of an experience with Perl. So here is my : get it done fast listing. 
 
 A Perl script is a text file with the extension `.pl`.
@@ -370,16 +370,16 @@ sub subroutine {
 A Perl script (.pl file) must always contain exactly zero package declarations.
 A Perl module (.pm file) must always contain exactly one package declaration, corresponding exactly to its name and location. E.g. module `Demo/StringUtils.pm` must begin with package `Demo::StringUtils`.
 
-### ------------------------------------------------------{PERL GUIDE ENDS}-----------------------------------------------------
+### ------------------------------------------------------{PERL GUIDE ENDS}-------------------
 
 ## API Reference
-![JQUERY API](https://api.jquery.com/)</br>
-![AJAX](http://api.jquery.com/jquery.ajax/)</br>
-![SQLite3](https://www.sqlite.org/docs.html)</br>
-![JSON Docs](http://www.json.org/)</br>
-![Apache Docs](http://httpd.apache.org/docs/current/howto/cgi.html)</br>
-![Perl Docs](http://perldoc.perl.org/)</br>
-![SQLite3 for Perl](http://search.cpan.org/~msergeant/DBD-SQLite-0.31/lib/DBD/SQLite.pm)</br>
+[JQUERY API](https://api.jquery.com/)</br>
+[AJAX](http://api.jquery.com/jquery.ajax/)</br>
+[SQLite3](https://www.sqlite.org/docs.html)</br>
+[JSON Docs](http://www.json.org/)</br>
+[Apache Docs](http://httpd.apache.org/docs/current/howto/cgi.html)</br>
+[Perl Docs](http://perldoc.perl.org/)</br>
+[SQLite3 for Perl](http://search.cpan.org/~msergeant/DBD-SQLite-0.31/lib/DBD/SQLite.pm)</br>
 
 ## Contributors
 If you want to contribute or add to it or make it better, more readable, go for it. Tweet me issues if you can  : [@shreyaslumos](https://www.twitter.com/shreyaslumos) 

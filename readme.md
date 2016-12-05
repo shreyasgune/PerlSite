@@ -146,10 +146,10 @@ cpan DBI
 Also , remember to `sudo chmod 777 <your_script_file>` your `.cgi` files. 
 
 # A Short and Sweet : Perl Essentials
-### ------------------------------------------------------{PERL GUIDE BEGINS}---------------
-So, I have had a bit of an experience with Perl. So here is my : get it done fast listing. 
+### ------------------------{PERL GUIDE BEGINS}---------------
+So, I have had a bit of an experience with Perl. So here is my : get it done fast listing.</br> 
 
-A Perl script is a text file with the extension `.pl`.
+A Perl script is a text file with the extension `.pl`.</br>
 
 ## Hello World
 Here's the full text of `helloworld.pl`:
@@ -160,14 +160,15 @@ use warnings;
 print "Hello world";
 Perl scripts are interpreted by the Perl interpreter, perl or perl.exe:
 ```
+</br>
 To run it :: `perl helloworld.pl [arg0 [arg1 [arg2 ...]]]`
-
+</br>
 ## Variables
-Perl is made up of only three kind of variables : Scalars, Arrays and Hashes
-Scalar can be : undef(null), number, string, reference to another variable. PERL HAS NO BOOLEAN. False is (undef, 0, string "", string "0")
+Perl is made up of only three kind of variables : Scalars, Arrays and Hashes</br>
+Scalar can be : undef(null), number, string, reference to another variable. PERL HAS NO BOOLEAN.</br> False is (undef, 0, string "", string "0")
 
 ## Arrays 
-They are declared with `@variableName` syntax.
+They are declared with `@variableName` syntax.</br>
 ```
 my @array = (
 	"print",
@@ -180,31 +181,31 @@ my @array = (
 
 ```
 
-The access to the array elements is the usual array[num] or backwards : array[-num]. Yeah, it's circular that way.
-There is no collision between a scalar `$var` and an array `@var` containing a scalar entry `$var[0]`
-This is also allowed : `print "@array"` and you'll get the enitre array printed.
+The access to the array elements is the usual array[num] or backwards : array[-num]. Yeah, it's circular that way.</br>
+There is no collision between a scalar `$var` and an array `@var` containing a scalar entry `$var[0]`</br>
+This is also allowed : `print "@array"` and you'll get the enitre array printed.</br>
 
 
 ### Array Functions
-`<func> @arrayName`
-`pop @array` returns the final element of the array.
-`push @array, "val1", "val2";` appends stuff to the array.
-`shift @array` extracts and returns the first element of the array.
-`unshift @array, "val1"` inserts a new element at the start of the array.
-`join(", ", @arrayElements` concatenates many strings into one.
+`<func> @arrayName`</br>
+`pop @array` returns the final element of the array.</br>
+`push @array, "val1", "val2";` appends stuff to the array.</br>
+`shift @array` extracts and returns the first element of the array.</br>
+`unshift @array, "val1"` inserts a new element at the start of the array.</br>
+`join(", ", @arrayElements` concatenates many strings into one.</br>
 
-Map,grep and sort
+Map,grep and sort</br>
 `my @capitals = ("Baton Rouge", "Indianapolis", "Columbus", "Montgomery", "Helena", "Denver", "Boise");`
 
-MAP
-The `map` function takes an array as input and applies an operation to every scalar $_ in this array. It then constructs a new array out of the results
+MAP</br>
+The `map` function takes an array as input and applies an operation to every scalar $_ in this array. It then constructs a new array out of the results</br>
 ```
 print join ", ", map { uc $_ } @capitals;
 # "BATON ROUGE, INDIANAPOLIS, COLUMBUS, MONTGOMERY, HELENA, DENVER, BOISE"
 ```
 
-GREP
-The grep function takes an array as input and returns a filtered array as output. The syntax is similar to map. This time, the second argument is evaluated for each scalar $_ in the input array. If a boolean true value is returned, the scalar is put into the output array, otherwise not.
+GREP</br>
+The grep function takes an array as input and returns a filtered array as output. The syntax is similar to map. This time, the second argument is evaluated for each scalar $_ in the input array. If a boolean true value is returned, the scalar is put into the output array, otherwise not.</br>
 ```
 print join ", ", grep { length $_ == 6 } @capitals;
 # "Helena, Denver"
@@ -212,7 +213,7 @@ print join ", ", grep { length $_ == 6 } @capitals;
 print scalar grep { $_ eq "Columbus" } @capitals; # "1"
 ```
 
-SORT
+SORT</br>
 ```
 my @elevations = (19, 1, 2, 100, 3, 98, 100, 1056);
 
@@ -221,10 +222,10 @@ print join ", ", sort @elevations;
 ```
 
 ## Hash
-Hashes take the form of your normal key-value pair.
+Hashes take the form of your normal key-value pair.</br>
 `my %varname = ( "key" => "value" ); ` 
 
-example 
+example</br> 
 ```
 my %scientists = (
 	"Newton"   => "Isaac",
@@ -232,10 +233,10 @@ my %scientists = (
 	"Darwin"   => "Charles",
 );
 ```
-If you want to access a particular key's value : `print $scientists{"Newton"};` and the output will be `Isaac`.
+If you want to access a particular key's value : `print $scientists{"Newton"};` and the output will be `Isaac`.</br>
 
 ## References
-The same `\` works for hashes and arrays as well as far as references is concerned.
+The same `\` works for hashes and arrays as well as far as references is concerned.</br>
 ```
 my $variable = "somevalue";
 my $variableRef = \$variable;
@@ -256,7 +257,7 @@ print $data{"0"}; # "blue"
 ```
 
 ## Conditionals
-Pretty straight forward. Just, `else if` changes to `elif`. There is this `unless ... else` thing but it's confusing so I'm going to skip it.
+Pretty straight forward. Just, `else if` changes to `elif`. There is this `unless ... else` thing but it's confusing so I'm going to skip it.</br>
 
 ## Ternary Operator
 ```
@@ -298,7 +299,7 @@ foreach my $key (keys %scientists) {
 
 
 ## Subroutines
-Subroutines are declared using the `sub` keyword. In contrast with built-in functions, user-defined subroutines always accept the same input: a list of scalars. That list may of course have a single element, or be empty. A single scalar is taken as a list with a single element. A hash with N elements is taken as a list with 2N elements.
+Subroutines are declared using the `sub` keyword. In contrast with built-in functions, user-defined subroutines always accept the same input: a list of scalars.</br>That list may of course have a single element, or be empty.</br> A single scalar is taken as a list with a single element. A hash with N elements is taken as a list with 2N elements.</br>
 
 ```
 sub somename()
@@ -321,7 +322,7 @@ somename("argument 1","argument 2","argument 3"); # this will return :: { KEY=> 
 ```
 
 ## Module
-A module is a `.pm` file that you can include in another Perl file (script or module). A module is a text file with exactly the same syntax as a `.pl` Perl script. An example module might be located at `C:\foo\bar\baz\Demo\StringUtils.pm` or `/foo/bar/baz/Demo/StringUtils.pm`, and read as follows:
+A module is a `.pm` file that you can include in another Perl file (script or module). A module is a text file with exactly the same syntax as a `.pl` Perl script.</br> An example module might be located at `C:\foo\bar\baz\Demo\StringUtils.pm` or `/foo/bar/baz/Demo/StringUtils.pm`, and read as follows:</br>
 
 ```
 use strict;
@@ -335,9 +336,10 @@ sub zombify {
 
 return 1;
 ```
-Because a module is executed from top to bottom when it is loaded, you need to return a true value at the end to show that it was loaded successfully.
+</br>
+Because a module is executed from top to bottom when it is loaded, you need to return a true value at the end to show that it was loaded successfully.</br>
 
-Once the Perl module is created and perl knows where to look for it, you can use the `require` built-in function to search for and execute it during a Perl script.
+Once the Perl module is created and perl knows where to look for it, you can use the `require` built-in function to search for and execute it during a Perl script.</br>
 
 ```
 use strict;
@@ -349,7 +351,7 @@ print zombify("i want brains"); # "r wrnt brrrns"
 ```
 
 ## Packages
-A package is a namespace in which subroutines can be declared. Any subroutine you declare is implicitly declared within the current package. At the beginning of execution, you are in the main package, but you can switch package using the package built-in function:
+A package is a namespace in which subroutines can be declared. Any subroutine you declare is implicitly declared within the current package. At the beginning of execution, you are in the main package, but you can switch package using the package built-in function:</br>
 
 ```
 use strict;
@@ -367,10 +369,10 @@ sub subroutine {
 }
 ```
 ### ATTENTION :
-A Perl script (.pl file) must always contain exactly zero package declarations.
-A Perl module (.pm file) must always contain exactly one package declaration, corresponding exactly to its name and location. E.g. module `Demo/StringUtils.pm` must begin with package `Demo::StringUtils`.
+A Perl script (.pl file) must always contain exactly zero package declarations.</br>
+A Perl module (.pm file) must always contain exactly one package declaration, corresponding exactly to its name and location. E.g.</br> module `Demo/StringUtils.pm` must begin with package `Demo::StringUtils`.
 
-### ------------------------------------------------------{PERL GUIDE ENDS}-------------------
+### -----------------------------{PERL GUIDE ENDS}-------------------
 
 ## API Reference
 [JQUERY API](https://api.jquery.com/)</br>

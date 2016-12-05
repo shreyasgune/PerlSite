@@ -10,10 +10,7 @@ SQL (can be any type of SQL)</br>
 JQUERY</br>
 HTML</br>
 
-##Deployed Here
-[http://52.23.229.225/appoint.html](http://52.23.229.225/appoint.html)
-
-#Front End Look
+# Front End Look
 When appointments are absent
 ```
 =============================================
@@ -104,7 +101,7 @@ When you "ADD" something
 ==============================================
 ```
 
-##Install the dependencies
+## Install the dependencies
 ```
 sudo apt-get update
 sudo apt-get install apache2
@@ -112,14 +109,14 @@ sudo apt-get install sqlite3 libsqlite3-dev
 sudo apt-get install build-essential
 ```
 
-##Create cgi-bin folder and grant it permissions
+## Create cgi-bin folder and grant it permissions
 `sudo mkdir /home/www/cgi-bin/`</br>
 `sudo chmod 777 /home/www/cgi-bin/` </br>
 
-##Put your html files in  
+## Put your html files in  
 `/var/www/html/` 
 
-##Edit apache2.conf
+## Edit apache2.conf
 I've given you the file, if you just want to go ahead and replace it.
 
 ```
@@ -136,17 +133,244 @@ Require all granted
 
 ```
 
-##Install perl dependencies
+## Install perl dependencies
 ```
 sudo apt-get install libconfig-yaml-perl
 cpan DBD::SQLite
 cpan DBI
 ```
 
-##One very important point : To enable CGI scripts to run Apache2
+## One very important point : To enable CGI scripts to run Apache2
 `sudo a2enmod cgi`
 
 Also , remember to `sudo chmod 777 <your_script_file>` your `.cgi` files. 
+
+# A Short and Sweet : Perl Essentials
+# ------------------------------------------------------{PERL GUIDE BEGINS}-----------------------------------------------------
+So, I have had a bit of an experience with Perl. So here is my : get it done fast listing. 
+
+A Perl script is a text file with the extension `.pl`.
+
+## Hello World
+Here's the full text of `helloworld.pl`:
+```
+use strict;
+use warnings;
+
+print "Hello world";
+Perl scripts are interpreted by the Perl interpreter, perl or perl.exe:
+```
+To run it :: `perl helloworld.pl [arg0 [arg1 [arg2 ...]]]`
+
+## Variables
+Perl is made up of only three kind of variables : Scalars, Arrays and Hashes
+Scalar can be : undef(null), number, string, reference to another variable. PERL HAS NO BOOLEAN. False is (undef, 0, string "", string "0")
+
+## Arrays 
+They are declared with `@variableName` syntax.
+```
+my @array = (
+	"print",
+	"these",
+	"strings",
+	"out",
+	"for",
+	"me", # trailing comma is okay
+);
+
+```
+
+The access to the array elements is the usual array[num] or backwards : array[-num]. Yeah, it's circular that way.
+There is no collision between a scalar `$var` and an array `@var` containing a scalar entry `$var[0]`
+This is also allowed : `print "@array"` and you'll get the enitre array printed.
+
+
+### Array Functions
+`<func> @arrayName`
+`pop @array` returns the final element of the array.
+`push @array, "val1", "val2";` appends stuff to the array.
+`shift @array` extracts and returns the first element of the array.
+`unshift @array, "val1"` inserts a new element at the start of the array.
+`join(", ", @arrayElements` concatenates many strings into one.
+
+Map,grep and sort
+`my @capitals = ("Baton Rouge", "Indianapolis", "Columbus", "Montgomery", "Helena", "Denver", "Boise");`
+
+MAP
+The `map` function takes an array as input and applies an operation to every scalar $_ in this array. It then constructs a new array out of the results
+```
+print join ", ", map { uc $_ } @capitals;
+# "BATON ROUGE, INDIANAPOLIS, COLUMBUS, MONTGOMERY, HELENA, DENVER, BOISE"
+```
+
+GREP
+The grep function takes an array as input and returns a filtered array as output. The syntax is similar to map. This time, the second argument is evaluated for each scalar $_ in the input array. If a boolean true value is returned, the scalar is put into the output array, otherwise not.
+```
+print join ", ", grep { length $_ == 6 } @capitals;
+# "Helena, Denver"
+
+print scalar grep { $_ eq "Columbus" } @capitals; # "1"
+```
+
+SORT
+```
+my @elevations = (19, 1, 2, 100, 3, 98, 100, 1056);
+
+print join ", ", sort @elevations;
+# "1, 100, 100, 1056, 19, 2, 3, 98"
+```
+
+## Hash
+Hashes take the form of your normal key-value pair.
+`my %varname = ( "key" => "value" ); ` 
+
+example 
+```
+my %scientists = (
+	"Newton"   => "Isaac",
+	"Einstein" => "Albert",
+	"Darwin"   => "Charles",
+);
+```
+If you want to access a particular key's value : `print $scientists{"Newton"};` and the output will be `Isaac`.
+
+## References
+The same `\` works for hashes and arrays as well as far as references is concerned.
+```
+my $variable = "somevalue";
+my $variableRef = \$variable;
+```
+
+## A roundup
+```
+my $data = "orange";
+my @data = ("purple");
+my %data = ( "0" => "blue");
+
+print $data;      # "orange"
+print $data[0];   # "purple"
+print $data["0"]; # "purple"
+print $data{0};   # "blue"
+print $data{"0"}; # "blue"
+
+```
+
+## Conditionals
+Pretty straight forward. Just, `else if` changes to `elif`. There is this `unless ... else` thing but it's confusing so I'm going to skip it.
+
+## Ternary Operator
+```
+my $gain = 48;
+print "You gained ", $gain, " ", ($gain == 1 ? "experience point" : "experience points"), "!";
+```
+
+## Loops
+### While
+```
+my $i = 0;
+while($i < scalar @array) {
+	print $i, ": ", $array[$i];
+	$i++;
+}
+```
+
+### until
+```
+my $i = 0;
+until($i >= scalar @array) {
+	print $i, ": ", $array[$i];
+	$i++;
+}
+```
+
+### For and For-each
+```
+#for loop
+for(my $i = 0; $i < scalar @array; $i++) {
+	print $i, ": ", $array[$i];
+}
+
+#foreach
+foreach my $key (keys %scientists) {
+	print $key, ": ", $scientists{$key};
+}
+```
+
+
+## Subroutines
+Subroutines are declared using the `sub` keyword. In contrast with built-in functions, user-defined subroutines always accept the same input: a list of scalars. That list may of course have a single element, or be empty. A single scalar is taken as a list with a single element. A hash with N elements is taken as a list with 2N elements.
+
+```
+sub somename()
+{
+	my($arg1,$arg2,$arg3) = (@_); #this is where all our arguments from our function call land up
+	
+	#here is a simple test that will show how we return a hash
+	if(!$arg1 || !$arg2 || !$arg3) 
+	{
+		#This is a hash that is returned.
+		return {Message => "No argument found"};
+	}
+	
+	return { KEY => arg1 };
+}
+
+somename() # nothing is passed in so it's going to fail and return { Message => "No argument found" }
+somename("argument 1","argument 2","argument 3"); # this will return :: { KEY=> "argument 1"}
+
+```
+
+## Module
+A module is a `.pm` file that you can include in another Perl file (script or module). A module is a text file with exactly the same syntax as a `.pl` Perl script. An example module might be located at `C:\foo\bar\baz\Demo\StringUtils.pm` or `/foo/bar/baz/Demo/StringUtils.pm`, and read as follows:
+
+```
+use strict;
+use warnings;
+
+sub zombify {
+	my $word = shift @_;
+	$word =~ s/[aeiou]/r/g;
+	return $word;
+}
+
+return 1;
+```
+Because a module is executed from top to bottom when it is loaded, you need to return a true value at the end to show that it was loaded successfully.
+
+Once the Perl module is created and perl knows where to look for it, you can use the `require` built-in function to search for and execute it during a Perl script.
+
+```
+use strict;
+use warnings;
+
+require Demo::StringUtils;
+
+print zombify("i want brains"); # "r wrnt brrrns"
+```
+
+## Packages
+A package is a namespace in which subroutines can be declared. Any subroutine you declare is implicitly declared within the current package. At the beginning of execution, you are in the main package, but you can switch package using the package built-in function:
+
+```
+use strict;
+use warnings;
+
+sub subroutine {
+	print "universe";
+}
+
+package Food::Potatoes;
+
+# no collision:
+sub subroutine {
+	print "kingedward";
+}
+```
+### ATTENTION :
+A Perl script (.pl file) must always contain exactly zero package declarations.
+A Perl module (.pm file) must always contain exactly one package declaration, corresponding exactly to its name and location. E.g. module `Demo/StringUtils.pm` must begin with package `Demo::StringUtils`.
+
+# ------------------------------------------------------{PERL GUIDE ENDS}-----------------------------------------------------
 
 ## API Reference
 ![JQUERY API](https://api.jquery.com/)</br>

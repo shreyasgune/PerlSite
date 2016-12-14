@@ -169,7 +169,8 @@ To run it :: `perl helloworld.pl [arg0 [arg1 [arg2 ...]]]`
 Perl is made up of only three kind of variables : Scalars, Arrays and Hashes</br>
 
 ## Scalar 
-It can be : undef(null), number, string, reference to another variable. 
+It can be : undef(null), number, string, reference to another variable.
+` my $variable_name = "somevalue";` </br>
 PERL HAS NO BOOLEAN.</br> False is (undef, 0, string "", string "0")
 
 ## Arrays 

@@ -158,8 +158,10 @@ use strict;
 use warnings;
 
 print "Hello world";
-Perl scripts are interpreted by the Perl interpreter, perl or perl.exe:
+
 ```
+Perl scripts are interpreted by the Perl interpreter, perl or perl.exe:
+You use the first two lines (use strict and use warnings) to let the user known where the error has taken place (line number) and the type of error.
 </br>
 To run it :: `perl helloworld.pl [arg0 [arg1 [arg2 ...]]]`
 </br>
